@@ -1,0 +1,59 @@
+{
+  "manifest_version": 3,
+  "name": "Extensión para la Detección de Sitios Web Peligrosos",
+  "version": "1.0",
+  "description": "Una extensión de navegador que detecta sitios web peligrosos para proteger al usuario.",
+  "icons": {
+    "48": "assets/icon-48.png",
+    "128": "assets/icon-128.png"
+  },
+  "action": {
+    "default_popup": "content/popup.html",
+    "default_icon": "assets/icon-48.png"
+  },
+  "background": {
+    "service_worker": "../js/Background.js"
+  },
+  "permissions": [
+    "activeTab",
+    "webRequest",
+    "storage",
+    "tabs"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "author": {
+    "university": "Fundación universitaria del Areandina",
+    "student": "José Julián Álvarez Uparela"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["scripts/content.js"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["assets/*"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "options_page": "content/options.html"
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
